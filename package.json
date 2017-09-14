@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/raloliver/charbis/issues"
   },
-  "homepage": "https://github.com/raloliver/charbis#readme"
+  "homepage": "https://github.com/raloliver/charbis#readme",
+  "dependencies": {
+    "express": "^4.15.4"
+  }
 }

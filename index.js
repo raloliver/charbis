@@ -1,3 +1,4 @@
+//server com node
 var http = require('http')
 
 http.createServer((req, res) => {
@@ -5,6 +6,18 @@ http.createServer((req, res) => {
         'Content-type': 'text/plain'
     })
     res.end('Hello Node')
-}).listen(3007)
+}).listen(3003)
 
-console.log('Init.')
+console.log('Init with Node')
+
+//server com express
+const express = require('express')
+const app = express()
+
+app.get('/', (req, res) => {
+    res.send('Hello Express')
+})
+
+app.listen(3007, () => {
+    console.log('Init with Express')
+})
