@@ -15,7 +15,16 @@ const express = require('express')
 const app = express()
 
 app.get('/', (req, res) => {
-    res.send('Hello Express')
+    res.json({
+        user: {
+            id: 19861,
+            name: "Israel",
+            email: "eu@ral.ninja",
+            vip: true,
+            config: []
+        }
+    })
+    //res.send('Hello Express')
 })
 
 app.listen(3007, () => {
