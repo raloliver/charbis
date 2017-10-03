@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>websocket</title>
+</head>
+
+<body>
+    <div id="wrap">
+        <ul id="msgs">
+
+        </ul>
+    </div>
+    <script>
+        (function () {
+            let websocket = null
+            const URI = 'ws://echo.websocket.org/'
+            const init = function () {
+                websocket = new WebSocket(URI)
+
+                websocket.onopen = function (event) {
+                    onOpen(event)
+                }
+                websocket.onmessage = function (event) {
+                    onMessage(event)
+                }
+                websocket.onclose = function (event) {
+                    onClose(event)
+                }
+
+            }
+
+            function onOpen(e) {
+                console.log('WS connected')
+                sendMessage('hello, its me')
+                //sendMessage('hi, its ok?')
+            }
+
+            function sendMessage(str) {
+                websocket.send(str)
+            }
+
+            function onMessage(event) {
+                console.log('MSG send:', event.data)
+                let msgs = document.getElementById('msgs')
+                let item = document.createElement('li')
+                item.innerHTML = event.data
+                msgs.appendChild(item)
+
+                websocket.close()
+            }
+
+            function onClose(event) {
+                console.log('Disconnected')
+            }
+
+            init()
+        })()
+    </script>
+</body>
+
+</html>
