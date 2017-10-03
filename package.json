@@ -17,6 +17,13 @@
   },
   "homepage": "https://github.com/raloliver/charbis#readme",
   "dependencies": {
-    "express": "^4.15.4"
+    "body-parser": "^1.18.2",
+    "express": "^4.15.4",
+    "express-hbs": "^1.0.4",
+    "express-session": "^1.15.6",
+    "express-validator": "^4.2.1",
+    "method-override": "^2.3.10",
+    "mongoose": "^4.11.14",
+    "morgan": "^1.9.0"
   }
 }
