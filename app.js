@@ -5,8 +5,8 @@ const app = express()
 const env = path.join(__dirname, './src/configs/env', process.env.NODE_ENV || 'development')
 
 module.exports = {
-    app: app,
-    env: env
+    env: env,
+    app: app
 }
 require('./src')
 

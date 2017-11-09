@@ -1,5 +1,5 @@
 const express = require('express')
-const router = Express.Route()
+const router = express.Route()
 
 router.get('/', require('./../services/main'))
 
