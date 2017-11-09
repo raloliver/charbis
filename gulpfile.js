@@ -65,7 +65,7 @@ gulp.task('build-css', () => {
         .pipe(plumber({
             errorHandler: onError
         }))
-        .pipe(gulp.dest(paths.buildDir.concat('/css')))
+        .pipe(gulp.dest(paths.buildDir.concat('/')))
         .pipe(livereload())
 })
 
@@ -75,8 +75,8 @@ gulp.task('build-js', () => {
         .pipe(plumber({
             errorHandler: onError
         }))
-        .pipe(changed(paths.buildDir.concat('/js')))
-        .pipe(gulp.dest(paths.buildDir.concat('/js')))
+        .pipe(changed(paths.buildDir.concat('/')))
+        .pipe(gulp.dest(paths.buildDir.concat('/')))
         .pipe(livereload())
 })
 
