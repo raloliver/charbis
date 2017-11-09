@@ -1,3 +1,5 @@
 module.exports = (req, res) => {
-    res.send('hello world...')
+    res.render('main/index', {
+        title: 'charbis 2017 - Admin'
+    })
 }
