@@ -27,8 +27,8 @@ module.exports = (app) => {
     app.use(expressValidator())
 
     app.engine('hbs', hbs.express4({
-        defaultLayout: path.join(app.get('views', 'layout/main.hbs')),
-        partialsDir: path.join(app.get('views', 'partials')),
-        layoutsdDir: path.join(app.get('views', 'layouts'))
+        defaultLayout: path.join(app.get('views'), 'layouts/main.hbs'),
+        partialsDir: path.join(app.get('views'), 'partials'),
+        layoutsdDir: path.join(app.get('views'), 'layouts')
     }))
 }
