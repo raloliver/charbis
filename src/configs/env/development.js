@@ -1,3 +1,4 @@
+const express = require('express')
 const path = require('path')
 const morgan = require('morgan')
 const methodOverride = require('method-override')
@@ -6,13 +7,15 @@ const expressValidator = require('express-validator')
 const bodyParser = require('body-parser')
 const hbs = require('express-hbs')
 
-module.exports = (app) => {    
+module.exports = (app) => {
     app.set('port', 3000)
     app.set('host', '127.0.0.1')
     app.set('views', path.join(__dirname, './../../../build/views'))
     app.set('view engine', 'hbs')
+    app.set('assets', path.join(__dirname, './../../../build'))
 
     // middlewares
+    app.use(express.static(app.get('assets')))
     app.use(morgan('dev'))
     app.use(bodyParser.json())
     app.use(bodyParser.urlencoded({

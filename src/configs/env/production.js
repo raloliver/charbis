@@ -11,8 +11,10 @@ module.exports = (app) => {
     app.set('host', '127.0.0.1')
     app.set('views', path.join(__dirname, './../../../dist/views'))
     app.set('view engine', 'hbs')
+    app.set('assets', path.join(__dirname, './../../../dist'))
 
     // middlewares
+    app.use(express.static(app.get('assets')))
     app.use(morgan('combined'))
     app.use(bodyParser.json())
     app.use(bodyParser.urlencoded({

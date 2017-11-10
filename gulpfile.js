@@ -13,7 +13,6 @@ const colector = require('gulp-rev-collector')
 const uglify = require('gulp-uglify')
 const sass = require('gulp-sass')
 const rev = require('gulp-rev')
-const del = require('del')
 
 const paths = {
     fontsSrc: 'public/assets/fonts/',
@@ -95,7 +94,7 @@ gulp.task('build-fonts', () => {
         .pipe(livereload())
 })
 
-gulp.task('build', ['build-html', 'build-css', 'build-js', 'build-images', 'build-fonts'], () => {
+gulp.task('build', ['build-html', 'build-css', 'build-js', 'build-images', 'build-fonts'], (done) => {
     return initServer()
 })
 
