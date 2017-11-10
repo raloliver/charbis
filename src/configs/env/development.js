@@ -7,7 +7,7 @@ const bodyParser = require('body-parser')
 const hbs = require('express-hbs')
 
 module.exports = (app) => {    
-    app.set('port', 9000)
+    app.set('port', 3000)
     app.set('host', '127.0.0.1')
     app.set('views', path.join(__dirname, './../../../build/views'))
     app.set('view engine', 'hbs')

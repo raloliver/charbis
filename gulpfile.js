@@ -16,13 +16,13 @@ const rev = require('gulp-rev')
 const del = require('del')
 
 const paths = {
-    fontsSrc: 'public/assets/fonts',
-    htmlSrc: 'src/views',
-    sassSrc: 'public/scss',
-    jsSrc: 'public/js',
-    imgSrc: 'public/assets/images',
+    fontsSrc: 'public/assets/fonts/',
+    htmlSrc: 'src/views/',
+    sassSrc: 'public/scss/',
+    jsSrc: 'public/js/',
+    imgSrc: 'public/assets/images/',
 
-    revDir: 'build/rev',
+    revDir: 'build/rev/',
     distDir: 'dist/',
     buildDir: 'build/'
 }
@@ -100,10 +100,10 @@ gulp.task('build', ['build-html', 'build-css', 'build-js', 'build-images', 'buil
 })
 
 gulp.task('watch', () => {
-    gulp.watch(['src/views/**.*.hbs'], ['build-html'])
+    gulp.watch(['src/views/**/*.hbs'], ['build-html'])
     gulp.watch(['public/scss/**'], ['build-css'])
-    gulp.watch(paths.jsSrc.concat('**/*.js'), ['build-js'])
-    gulp.watch(paths.imgSrc.concat('**/*.+(png|jpeg|gif|jpg|svg|)'), ['build-images'])
+    gulp.watch(paths.jsSrc + '**/*.js', ['build-js'])
+    gulp.watch(paths.imgSrc + '**/*.+(png|jpeg|gif|jpg|svg|)', ['build-images'])
     gulp.watch(['public/assets/fonts/**'], ['build-fonts'])
 })
 

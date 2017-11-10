@@ -1,3 +1,3 @@
-(() => {
-    console.info('Its OK')
-})()
+(function () {
+    console.log('Its ok')
+})
