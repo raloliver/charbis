@@ -13,6 +13,7 @@ const colector = require('gulp-rev-collector')
 const uglify = require('gulp-uglify')
 const sass = require('gulp-sass')
 const rev = require('gulp-rev')
+const del = require('del')
 
 const paths = {
     fontsSrc: 'public/assets/fonts/',
