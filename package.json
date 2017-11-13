@@ -1,6 +1,6 @@
 {
   "name": "charbis",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "- um chat do rabis, tipo zapzap",
   "main": "app.js",
   "scripts": {
