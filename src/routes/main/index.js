@@ -1,6 +1,6 @@
 const express = require('express')
-const router = express.Route()
+const router = express.Router()
 
-router.get('/', require('./../services/main'))
+router.get('/', require('./../../services/main'))
 
 module.exports = router
