@@ -1,5 +1,4 @@
 const express = require('express')
-const mongoose = require('mongoose')
 const path = require('path')
 const morgan = require('morgan')
 const methodOverride = require('method-override')
@@ -7,6 +6,7 @@ const expressSession = require('express-session')
 const expressValidator = require('express-validator')
 const bodyParser = require('body-parser')
 const hbs = require('express-hbs')
+const mongoose = require('mongoose')
 
 module.exports = (app) => {
     app.set('port', 3000)
@@ -14,9 +14,11 @@ module.exports = (app) => {
     app.set('views', path.join(__dirname, './../../../build/views'))
     app.set('view engine', 'hbs')
     app.set('assets', path.join(__dirname, './../../../build'))
+
+    //database
     app.set('mongo_host', '127.0.0.1')
     app.set('mongo_port', 27017)
-    app.set('mongo_db', 'charbis_dev')
+    app.set('mongo_db', 'db_charbis')
     app.set('mongo_url', `mongodb://${app.get('mongo_host')}:${app.get('mongo_port')}/${app.get('mongo_db')}`)
 
     // middlewares

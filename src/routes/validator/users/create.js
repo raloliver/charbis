@@ -1,4 +1,4 @@
-module.exports = (req, res, next) {
+module.exports = (req, res, next) => {
     //here we use express-validator
     req
         .checkBody('name', 'Please, tell me your name!')
