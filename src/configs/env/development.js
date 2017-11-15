@@ -1,4 +1,5 @@
 const express = require('express')
+const mongoose = require('mongoose')
 const path = require('path')
 const morgan = require('morgan')
 const methodOverride = require('method-override')
@@ -13,6 +14,10 @@ module.exports = (app) => {
     app.set('views', path.join(__dirname, './../../../build/views'))
     app.set('view engine', 'hbs')
     app.set('assets', path.join(__dirname, './../../../build'))
+    app.set('mongo_host', '127.0.0.1')
+    app.set('mongo_port', 27017)
+    app.set('mongo_db', 'charbis_dev')
+    app.set('mongo_url', `mongodb://${app.get('mongo_host')}:${app.get('mongo_port')}/${app.get('mongo_db')}`)
 
     // middlewares
     app.use(express.static(app.get('assets')))
@@ -34,4 +39,6 @@ module.exports = (app) => {
         partialsDir: path.join(app.get('views'), 'partials'),
         layoutsdDir: path.join(app.get('views'), 'layouts')
     }))
+
+    mongoose.connect(app.get('mongo_url'))
 }
