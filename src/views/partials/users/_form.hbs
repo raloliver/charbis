@@ -1,0 +1,15 @@
+<form action="/users" method="POST" class="form-inline" role="form">
+    <div class="form-group">
+        <label class="sr-only" for="name">Name</label>
+        <input type="text" class="form-control" name="name" placeholder="What is your name?" value="{{ user.name }}">
+    </div>
+    <div class="form-group">
+        <label class="sr-only" for="email">Email</label>
+        <input type="email" class="form-control" name="email" placeholder="What is your email?" value="{{ user.email }}">
+    </div>
+    <div class="form-group">
+        <label class="sr-only" for="password">Password</label>
+        <input type="password" class="form-control" name="password" placeholder="Enter a password" value="{{ user.password }}">
+    </div>
+    <button type="submit" class="btn btn-primary pull-right">Save</button>
+</form>
